@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Form Example</title>
     <script>
         function validateForm() {
@@ -13,27 +11,17 @@
                 alert("Username cannot be empty.");
                 return false;
             }
-            var nameRegex = /^[A-Za-z\s]+$/;
-            if (!nameRegex.test(username)) {
-                alert("Username must contain only letters and spaces.");
-                return false;
-            }
-
-            // Validate password (not empty, at least 6 chars, includes at least one letter and one number)
             if (password === "") {
                 alert("Password cannot be empty.");
                 return false;
             }
+            
+            // Validate password (min 6 characters, at least one number and one letter)
             if (password.length < 6) {
                 alert("Password must be at least 6 characters long.");
                 return false;
             }
-            var passRegex = /^(?=.*[A-Za-z])(?=.*\d).+$/;
-            if (!passRegex.test(password)) {
-                alert("Password must contain at least one letter and one number.");
-                return false;
-            }
-
+            
             // If all validations pass
             return true;
         }
@@ -43,11 +31,13 @@
     <center>
         <h2>Application Form</h2>
         <form name="f1" action="/submit" method="POST" onsubmit="return validateForm()">
-            Enter Your Name: <input type="text" name="username" />
-            <br/><br/>
-            Enter Your Password: <input type="password" name="pwd" />
-            <br/><br/>
-            <input type="submit" value="Submit" />
+            Enter Your Name : <input type="text" name="username">
+            <br/>
+            <br/>
+            Enter Your Password : <input type="password" name="pwd">
+            <br/>
+            <br/>
+            <input type="submit" name = 'sb' value="Submit">
         </form>
     </center>
 </body>
