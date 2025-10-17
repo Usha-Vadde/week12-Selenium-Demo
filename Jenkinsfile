@@ -36,7 +36,7 @@ pipeline {
         stage('push Docker Image to Docker Hub') {
             steps {
                 echo "push Docker Image to Docker Hub"
-                bat "docker tag seleniumdemoapp:v1 bhavani765/sample:seleniumtestimage"               
+                bat "docker tag seleniumdemoapp:v1 vaddeusha/sample:seleniumtestimage"               
                     
                 bat "docker push vaddeusha/sample:seleniumtestimage"
                 
